@@ -4,7 +4,7 @@ import React from "react";
 function Background() {
   return (
     <div className="Background">
-      <p>hello</p>
+      <p>insta 🧢</p>
       <Caption />
     </div>
   );
