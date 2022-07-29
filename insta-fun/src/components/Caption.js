@@ -1,20 +1,19 @@
 import { captions } from "../api";
 import React, { useState } from "react";
+import "./Caption.css";
 
 function Caption() {
-  const [caption, setCaption] = useState();
-  const [inputs, setInputs] = useState({});
+  const [caption, setCaption] = useState([]);
+  const [photo, setPhoto] = useState("");
 
-  const handleChange = (event) => {
-    const name = event.target.id;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
+  const handleCaption = (e) => {
+    setPhoto(e.target.value);
   };
 
   const onSearch = () => {
-    captions({ words: inputs.words }).then((response) => {
+    captions({ photo }).then((response) => {
       console.log({ response });
-      setCaption(response.data);
+      setCaption([response.captions]);
     });
   };
 
@@ -26,18 +25,20 @@ function Caption() {
             type="text"
             id="caption"
             className="form-control me-4"
-            placeholder="photo subject"
-            onChange={handleChange}
+            placeholder="what are you posting?"
+            onChange={handleCaption}
             required
           />
         </div>
         <button
-          type="submit"
-          className="btn btn-success"
+          type="button"
+          className="button"
           onClick={() => {
             onSearch();
           }}
-        ></button>
+        >
+          cap
+        </button>
       </div>
       <div>{caption}</div>
     </div>
