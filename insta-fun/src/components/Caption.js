@@ -1,8 +1,9 @@
 import { captions } from "../api";
 import React, { useState } from "react";
 import "./Caption.css";
+import CaptionList from "./CaptionList";
 
-function Caption() {
+export default function Caption() {
   const [caption, setCaption] = useState([]);
   const [photo, setPhoto] = useState("");
 
@@ -12,7 +13,6 @@ function Caption() {
 
   const onSearch = () => {
     captions({ photo }).then((response) => {
-      console.log({ response });
       setCaption([response.captions]);
     });
   };
@@ -40,9 +40,9 @@ function Caption() {
           cap
         </button>
       </div>
-      <div>{caption}</div>
+      <div>
+        <CaptionList data={caption} />
+      </div>
     </div>
   );
 }
-
-export default Caption;
