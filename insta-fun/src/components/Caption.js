@@ -37,7 +37,7 @@ export default function Caption() {
             onSearch();
           }}
         >
-          cap
+          🧢
         </button>
       </div>
       <div>

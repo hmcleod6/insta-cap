@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Carter+One&family=IBM+Plex+Mono:wght@500&family=Montserrat:ital,wght@0,400;1,500;1,800;1,900&family=Roboto+Serif:opsz,wght@8..144,600&display=swap');
 
-.random-caption {
-  color: pink;
-  display: flex;
-  margin-top: 100px;
+.Background {
   font-family: 'Roboto Serif', serif;
 }
